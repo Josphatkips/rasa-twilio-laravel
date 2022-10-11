@@ -31,6 +31,7 @@ class SiteController extends Controller
             ]
         ]);
         Log::info($request->all());
-        Log::info($response);
+        Log::info($request->name);
+        // Log::info($response);
     }
 }
