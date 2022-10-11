@@ -20,18 +20,18 @@ class SiteController extends Controller
         
         
  
-        // $response = Http::post("https://twilio.roycehub.com/conversations/user1234u/trigger_intent?output_channel=latest", [
-        $response = Http::post("http://localhost:5005/conversations/user1234u/trigger_intent?output_channel=latest", [
+        $response = Http::post("https://twilio.roycehub.com/conversations/user1234u/trigger_intent?output_channel=latest", [
+        // $response = Http::post("http://localhost:5005/conversations/user1234u/trigger_intent?output_channel=latest", [
             "name" => "EXTERNAL_crm_form",
             'entities'=> [
-                'lead_name'=>"josphat",
-                'client_name'=>"client",
-                'client_number'=>"(801) 406-7958",
-                'beneficiary'=>"Jane",
-                // 'lead_name'=>$request->customData['lead_name'],
-                // 'client_name'=>$request->customData['client_name'],
-                // 'client_number'=>$request->customData['client_number'],
-                // 'beneficiary'=>$request->customData['beneficiary'],
+                // 'lead_name'=>"josphat",
+                // 'client_name'=>"client",
+                // 'client_number'=>"(801) 406-7958",
+                // 'beneficiary'=>"Jane",
+                'lead_name'=>$request->customData['lead_name'],
+                'client_name'=>$request->customData['client_name'],
+                'client_number'=>$request->customData['client_number'],
+                'beneficiary'=>$request->customData['beneficiary'],
                 
             ]
         ]);
