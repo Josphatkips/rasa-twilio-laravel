@@ -17,10 +17,15 @@ class SiteController extends Controller
 
     public function twilioWebHook(Request $request){
 
+        $hash = hash('crc32', "(801) 406-7958", FALSE);
+
+        // return $hash;
+
+
         
         
  
-        $response = Http::post("https://twilio.roycehub.com/conversations/user1234u/trigger_intent?output_channel=latest", [
+        $response = Http::post("https://twilio.roycehub.com/conversations/$hash/trigger_intent?output_channel=latest", [
         // $response = Http::post("http://localhost:5005/conversations/user1234u/trigger_intent?output_channel=latest", [
             "name" => "EXTERNAL_crm_form",
             'entities'=> [
