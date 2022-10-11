@@ -17,7 +17,7 @@ class SiteController extends Controller
 
     public function twilioWebHook(Request $request){
 
-        $hash = hash('crc32', "(801) 406-7958", FALSE);
+        $hash = hash('crc32', $request->customData['client_number'], FALSE);
 
         // return $hash;
 
