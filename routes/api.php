@@ -19,4 +19,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('twilio-webhook',[SiteController::class,'twilioWebHook']);
+Route::any('twilio-webhook',[SiteController::class,'twilioWebHook']);
